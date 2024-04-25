@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using open_house_api_c_sharp.infra.data;
@@ -11,9 +12,11 @@ using open_house_api_c_sharp.infra.data;
 namespace open_house_api_c_sharp.Migrations
 {
     [DbContext(typeof(ConectionContext))]
-    partial class ConectionContextModelSnapshot : ModelSnapshot
+    [Migration("20240425191241_create_tables")]
+    partial class create_tables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
