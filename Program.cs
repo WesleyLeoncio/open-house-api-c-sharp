@@ -7,6 +7,10 @@ using open_house_api_c_sharp.modules.categoria.repository;
 using open_house_api_c_sharp.modules.categoria.repository.interfaces;
 using open_house_api_c_sharp.modules.categoria.service;
 using open_house_api_c_sharp.modules.categoria.service.interfaces;
+using open_house_api_c_sharp.modules.filme.repository;
+using open_house_api_c_sharp.modules.filme.repository.interfaces;
+using open_house_api_c_sharp.modules.filme.service;
+using open_house_api_c_sharp.modules.filme.service.interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,6 +28,9 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddTransient<ICategoriaRepository, CategoriaRepository>();
 builder.Services.AddTransient<ICategoriaService, CategoriaService>();
+
+builder.Services.AddTransient<IFilmeRepository, FilmeRepository>();
+builder.Services.AddTransient<IFilmeService, FilmeService>();
 
 builder.Services.AddTransient<IErrorResultTask, TratarNotFoundException>();
 builder.Services.AddTransient<IErrorResultTask, TratarDbUpdateException>();

@@ -37,7 +37,7 @@ public class GlobalErrorHandlingMiddleware
             Task? erroResult = errorResultTask.ValidarException(error);
             if (erroResult != null) return erroResult;
         }
-        
+        Console.WriteLine(exception);
         return error.GetResultPadrao();
     }
     

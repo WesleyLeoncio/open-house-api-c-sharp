@@ -17,16 +17,16 @@ public class Categoria
     [Column(name:"nome", TypeName = "VARCHAR(100)")] 
     public string Nome { get; set; }
     
-    public List<Filme> Filmes { get; } = [];
-
+    public ICollection<Filme> Filmes { get; set; }= new List<Filme>();
+    
     public Categoria(Guid id, string nome)
     {
         Id = id;
         Nome = nome;
     }
 
-    public Categoria(string nome)
+    public Categoria()
     {
-        Nome = nome;
+      
     }
 }

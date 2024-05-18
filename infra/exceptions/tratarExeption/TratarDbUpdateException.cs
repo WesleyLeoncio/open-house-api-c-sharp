@@ -10,13 +10,13 @@ public class TratarDbUpdateException : IErrorResultTask
     {
         if (error.ExceptionType == typeof(DbUpdateException))
         {
-            string msg = "Registo já existe na base de dados!";
             int status = 409;
-            string result = JsonSerializer.Serialize(new { status, mensage = msg});
+            string result = JsonSerializer.Serialize(new { status, mensage = error.Msg});
             error.Context.Response.StatusCode = status;
+            Console.WriteLine(error);
             return error.Context.Response.WriteAsync(result);
         }
-
+        
         return null;
     }
 }

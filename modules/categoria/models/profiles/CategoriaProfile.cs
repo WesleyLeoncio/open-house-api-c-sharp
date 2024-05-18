@@ -11,5 +11,6 @@ public class CategoriaProfile : Profile
     {
         CreateMap<Categoria, CategoriaResponse>();
         CreateMap<CategoriaResquest, Categoria>();
+        CreateMap<CategoriaFilmeRequest, Categoria>();
     }
 }

@@ -24,8 +24,7 @@ public class CategoriaService : ICategoriaService
     public CategoriaResponse Create(CategoriaResquest request)
     {
         Categoria newCategoria = _mapper.Map<Categoria>(request);
-        _repository.Insert(newCategoria);
-        return _mapper.Map<CategoriaResponse>(newCategoria);
+        return _mapper.Map<CategoriaResponse>( _repository.Insert(newCategoria));
     }
 
     public CategoriaResponse GetId(Guid id)

@@ -40,7 +40,7 @@ namespace open_house_api_c_sharp.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "categoria_filme",
+                name: "CategoriaFilme",
                 columns: table => new
                 {
                     CategoriasId = table.Column<Guid>(type: "uuid", nullable: false),
@@ -48,15 +48,15 @@ namespace open_house_api_c_sharp.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_categoria_filme", x => new { x.CategoriasId, x.FilmesId });
+                    table.PrimaryKey("PK_CategoriaFilme", x => new { x.CategoriasId, x.FilmesId });
                     table.ForeignKey(
-                        name: "FK_categoria_filme_categorias_CategoriasId",
+                        name: "FK_CategoriaFilme_categorias_CategoriasId",
                         column: x => x.CategoriasId,
                         principalTable: "categorias",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_categoria_filme_filmes_FilmesId",
+                        name: "FK_CategoriaFilme_filmes_FilmesId",
                         column: x => x.FilmesId,
                         principalTable: "filmes",
                         principalColumn: "id",
@@ -64,8 +64,8 @@ namespace open_house_api_c_sharp.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_categoria_filme_FilmesId",
-                table: "categoria_filme",
+                name: "IX_CategoriaFilme_FilmesId",
+                table: "CategoriaFilme",
                 column: "FilmesId");
 
             migrationBuilder.CreateIndex(
@@ -85,7 +85,7 @@ namespace open_house_api_c_sharp.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "categoria_filme");
+                name: "CategoriaFilme");
 
             migrationBuilder.DropTable(
                 name: "categorias");

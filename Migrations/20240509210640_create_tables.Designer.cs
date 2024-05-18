@@ -12,7 +12,7 @@ using open_house_api_c_sharp.infra.data;
 namespace open_house_api_c_sharp.Migrations
 {
     [DbContext(typeof(ConectionContext))]
-    [Migration("20240425191241_create_tables")]
+    [Migration("20240509210640_create_tables")]
     partial class create_tables
     {
         /// <inheritdoc />
@@ -25,7 +25,7 @@ namespace open_house_api_c_sharp.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("categoria_filme", b =>
+            modelBuilder.Entity("CategoriaFilme", b =>
                 {
                     b.Property<Guid>("CategoriasId")
                         .HasColumnType("uuid");
@@ -37,7 +37,7 @@ namespace open_house_api_c_sharp.Migrations
 
                     b.HasIndex("FilmesId");
 
-                    b.ToTable("categoria_filme");
+                    b.ToTable("CategoriaFilme");
                 });
 
             modelBuilder.Entity("open_house_api_c_sharp.modules.categoria.models.entity.Categoria", b =>
@@ -99,7 +99,7 @@ namespace open_house_api_c_sharp.Migrations
                     b.ToTable("filmes");
                 });
 
-            modelBuilder.Entity("categoria_filme", b =>
+            modelBuilder.Entity("CategoriaFilme", b =>
                 {
                     b.HasOne("open_house_api_c_sharp.modules.categoria.models.entity.Categoria", null)
                         .WithMany()

@@ -28,9 +28,10 @@ public class Filme
     
     [Column(name:"imagem", TypeName = "VARCHAR(100)")] 
     public string Imagem{ get; set; }
-    
-    public List<Categoria> Categorias { get; } = [];
 
+    public ICollection<Categoria> Categorias { get; set; } = new List<Categoria>();
+    
+    
     public Filme(string nome, string descricao, DateTime dataLancamento, string duracao, string imagem, Guid id)
     {
         Nome = nome;
@@ -41,5 +42,7 @@ public class Filme
         Id = id;
     }
 
-    public Filme() { }
+    public Filme()
+    {
+    }
 }
