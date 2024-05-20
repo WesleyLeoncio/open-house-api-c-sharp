@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using open_house_api_c_sharp.infra.data;
+using open_house_api_c_sharp.modules.categoria.models.entity;
 using open_house_api_c_sharp.modules.filme.models.entity;
 using open_house_api_c_sharp.modules.filme.repository.interfaces;
 
@@ -23,7 +24,10 @@ public class FilmeRepository : IFilmeRepository
 
     public Filme Insert(Filme filme)
     {
-        _context.FilmeBd!.Add(filme);
+        // Adicionando o filme ao contexto
+        _context.FilmeBd.Add(filme);
+
+        // Salvando as alterações
         _context.SaveChanges();
         return filme;
     }
