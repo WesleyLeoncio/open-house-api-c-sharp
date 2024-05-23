@@ -19,5 +19,4 @@ public class Categoria
     
     public ICollection<Filme>? Filmes { get; set; }= new List<Filme>();
     
- 
 }

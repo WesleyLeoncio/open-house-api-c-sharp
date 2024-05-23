@@ -30,5 +30,5 @@ public class Filme
     public string? Imagem { get; set; }
 
     public ICollection<Categoria> Categorias { get; set; } = new List<Categoria>();
-    
+     
 }
