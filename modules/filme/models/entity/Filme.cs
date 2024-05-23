@@ -15,34 +15,20 @@ public class Filme
     public Guid Id { get; set; }
     
     [Column(name:"nome", TypeName = "VARCHAR(100)")] 
-    public string Nome{ get; set; }
+    public string? Nome { get; set; }
     
     [Column(name:"descricao", TypeName = "TEXT")]
-    public string Descricao{ get; set; }
+    public string? Descricao { get; set; }
     
     [Column(name:"data_lancamento")]
-    public DateTime DataLancamento{ get; set; }
+    public DateTime DataLancamento { get; set; }
     
     [Column(name:"duracao", TypeName = "VARCHAR(30)")] 
-    public string Duracao{ get; set; }
+    public string? Duracao { get; set; }
     
     [Column(name:"imagem", TypeName = "VARCHAR(100)")] 
-    public string Imagem{ get; set; }
+    public string? Imagem { get; set; }
 
     public ICollection<Categoria> Categorias { get; set; } = new List<Categoria>();
     
-    
-    public Filme(string nome, string descricao, DateTime dataLancamento, string duracao, string imagem, Guid id)
-    {
-        Nome = nome;
-        Descricao = descricao;
-        DataLancamento = dataLancamento;
-        Duracao = duracao;
-        Imagem = imagem;
-        Id = id;
-    }
-
-    public Filme()
-    {
-    }
 }
