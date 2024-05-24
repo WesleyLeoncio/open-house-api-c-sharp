@@ -6,7 +6,7 @@ namespace open_house_api_c_sharp.modules.categoria.repository;
 
 public class CategoriaRepository : ICategoriaRepository
 {
-    private ConnectionContext _context;
+    private readonly ConnectionContext _context;
 
     public CategoriaRepository(ConnectionContext context)
     {
@@ -43,7 +43,7 @@ public class CategoriaRepository : ICategoriaRepository
 
     public void Delete(Categoria? categoria)
     {
-        _context.CategoriaBd!.Remove(categoria);
+        if (categoria != null) _context.CategoriaBd!.Remove(categoria);
         _context.SaveChanges();
     }
     
