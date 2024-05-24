@@ -8,9 +8,9 @@ namespace open_house_api_c_sharp.modules.filme.repository;
 
 public class FilmeRepository : IFilmeRepository
 {
-    private ConectionContext _context;
+    private ConnectionContext _context;
 
-    public FilmeRepository(ConectionContext context)
+    public FilmeRepository(ConnectionContext context)
     {
         _context = context;
     }

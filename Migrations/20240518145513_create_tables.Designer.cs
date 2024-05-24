@@ -11,7 +11,7 @@ using open_house_api_c_sharp.infra.data;
 
 namespace open_house_api_c_sharp.Migrations
 {
-    [DbContext(typeof(ConectionContext))]
+    [DbContext(typeof(ConnectionContext))]
     [Migration("20240518145513_create_tables")]
     partial class create_tables
     {

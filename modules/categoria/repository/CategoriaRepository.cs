@@ -6,9 +6,9 @@ namespace open_house_api_c_sharp.modules.categoria.repository;
 
 public class CategoriaRepository : ICategoriaRepository
 {
-    private ConectionContext _context;
+    private ConnectionContext _context;
 
-    public CategoriaRepository(ConectionContext context)
+    public CategoriaRepository(ConnectionContext context)
     {
         _context = context;
     }

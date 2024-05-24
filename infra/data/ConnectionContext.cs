@@ -1,14 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using open_house_api_c_sharp.modules.categoria.models.entity;
 using open_house_api_c_sharp.modules.filme.models.entity;
 
 namespace open_house_api_c_sharp.infra.data;
 
-public class ConectionContext : DbContext
+public class ConnectionContext(DbContextOptions options) : DbContext(options)
 {
-    public ConectionContext(DbContextOptions<ConectionContext> opts) : base(opts){}
-    
     public DbSet<Categoria>? CategoriaBd { get; set; }
     
     public DbSet<Filme>? FilmeBd { get; set; }
