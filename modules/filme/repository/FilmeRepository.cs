@@ -16,7 +16,7 @@ public class FilmeRepository : IFilmeRepository
 
     public IEnumerable<Filme> GetAll(int skip = 0, int take = 10)
     {
-        return _context.FilmeBd!
+        return _context.FilmeBd!.AsNoTracking()
             .Include(filme =>filme.Categorias)
             .Skip(skip).Take(take);
     }

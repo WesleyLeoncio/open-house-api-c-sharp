@@ -1,4 +1,5 @@
-﻿using open_house_api_c_sharp.infra.data;
+﻿using Microsoft.EntityFrameworkCore;
+using open_house_api_c_sharp.infra.data;
 using open_house_api_c_sharp.modules.categoria.models.entity;
 using open_house_api_c_sharp.modules.categoria.repository.interfaces;
 
@@ -15,17 +16,17 @@ public class CategoriaRepository : ICategoriaRepository
 
     public Categoria? GetById(Guid id)
     {
-        return _context.CategoriaBd!.FirstOrDefault(categoria => categoria.Id == id);
+        return _context.CategoriaBd!.AsNoTracking().FirstOrDefault(categoria => categoria.Id == id);
     }
     
     public Categoria? GetByName(string nome)
     {
-        return _context.CategoriaBd!.FirstOrDefault(categoria => categoria.Nome == nome);
+        return _context.CategoriaBd!.AsNoTracking().FirstOrDefault(categoria => categoria.Nome == nome);
     }
 
     public IEnumerable<Categoria> GetAll(int skip = 0, int take = 10)
     {
-        return _context.CategoriaBd!.Skip(skip).Take(take);
+        return _context.CategoriaBd!.AsNoTracking().Skip(skip).Take(take);
     }
 
     public Categoria Insert(Categoria categoria)

@@ -11,7 +11,7 @@ using open_house_api_c_sharp.infra.data;
 namespace open_house_api_c_sharp.Migrations
 {
     [DbContext(typeof(ConnectionContext))]
-    partial class ConectionContextModelSnapshot : ModelSnapshot
+    partial class ConnectionContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
@@ -45,7 +45,6 @@ namespace open_house_api_c_sharp.Migrations
                         .HasColumnName("id");
 
                     b.Property<string>("Nome")
-                        .IsRequired()
                         .HasColumnType("VARCHAR(100)")
                         .HasColumnName("nome");
 
@@ -69,22 +68,18 @@ namespace open_house_api_c_sharp.Migrations
                         .HasColumnName("data_lancamento");
 
                     b.Property<string>("Descricao")
-                        .IsRequired()
                         .HasColumnType("TEXT")
                         .HasColumnName("descricao");
 
                     b.Property<string>("Duracao")
-                        .IsRequired()
                         .HasColumnType("VARCHAR(30)")
                         .HasColumnName("duracao");
 
                     b.Property<string>("Imagem")
-                        .IsRequired()
                         .HasColumnType("VARCHAR(100)")
                         .HasColumnName("imagem");
 
                     b.Property<string>("Nome")
-                        .IsRequired()
                         .HasColumnType("VARCHAR(100)")
                         .HasColumnName("nome");
 

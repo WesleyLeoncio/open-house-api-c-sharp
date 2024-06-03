@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace open_house_api_c_sharp.Migrations
 {
     /// <inheritdoc />
-    public partial class create_tables : Migration
+    public partial class Create_tables : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -16,7 +16,7 @@ namespace open_house_api_c_sharp.Migrations
                 columns: table => new
                 {
                     id = table.Column<Guid>(type: "uuid", nullable: false),
-                    nome = table.Column<string>(type: "VARCHAR(100)", nullable: false)
+                    nome = table.Column<string>(type: "VARCHAR(100)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -28,11 +28,11 @@ namespace open_house_api_c_sharp.Migrations
                 columns: table => new
                 {
                     id = table.Column<Guid>(type: "uuid", nullable: false),
-                    nome = table.Column<string>(type: "VARCHAR(100)", nullable: false),
-                    descricao = table.Column<string>(type: "TEXT", nullable: false),
+                    nome = table.Column<string>(type: "VARCHAR(100)", nullable: true),
+                    descricao = table.Column<string>(type: "TEXT", nullable: true),
                     data_lancamento = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    duracao = table.Column<string>(type: "VARCHAR(30)", nullable: false),
-                    imagem = table.Column<string>(type: "VARCHAR(100)", nullable: false)
+                    duracao = table.Column<string>(type: "VARCHAR(30)", nullable: true),
+                    imagem = table.Column<string>(type: "VARCHAR(100)", nullable: true)
                 },
                 constraints: table =>
                 {
