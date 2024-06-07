@@ -38,7 +38,7 @@ public class GlobalErrorHandlingMiddleware
             if (erroResult != null) return erroResult;
         }
         Console.WriteLine(exception);
-        return error.GetResultPadrao();
+        return error.GetResultPadrao(exception);
     }
     
  

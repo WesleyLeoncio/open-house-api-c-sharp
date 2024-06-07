@@ -15,9 +15,9 @@ public class ErrorExceptionResult
         ExceptionType = exception.GetType();
     }
 
-    public Task GetResultPadrao()
+    public Task GetResultPadrao(Exception exception)
     {
-        string msg = "Aconteceu um erro desconhecido, entre em contado com nosso suporte.";
+        string msg = exception.Message;
         int status = 500;
         string result = JsonSerializer.Serialize(new { status , mensage = msg});
         Context.Response.StatusCode = status;
